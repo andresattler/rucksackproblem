@@ -1,3 +1,4 @@
+/* eslint comma-dangle: ["error", "never"]*/
 const maxWeight = 15
 
 function randomInt(max) {
