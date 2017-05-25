@@ -7,9 +7,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress",
     "build": "webpack --progress",
-    "test": "eslint src && flow",
-    "precommit": "yarn test",
-    "prepush": "yarn test && yarn build"
+    "test": "eslint src && flow"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
