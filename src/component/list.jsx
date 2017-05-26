@@ -11,9 +11,10 @@ type Props = {
 }
 
 const ItemList = ({ items, handleClick }: Props) => (
-  <List>
+  <List style={{ backgroundColor: 'white', height: '35vh', width: '300px', overflowY: 'scroll' }}>
     {items.map((item, i) => (
       <ListItem
+        style={{ backgroundColor: 'white', textAlign: 'center' }}
         key={i.toString()}
         primaryText={`${i}.
           value: ${item.value}€

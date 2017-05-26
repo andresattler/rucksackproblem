@@ -1,6 +1,9 @@
 import React from 'react'
+
 import Divider from 'material-ui/Divider'
+import Paper from 'material-ui/Paper'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+
 
 import GenerateRandomItemesButton from './container/generate-random-items-button'
 import ItemList from './container/item-list'
@@ -15,17 +18,20 @@ import Summery from './container/summery'
 injectTapEventPlugin()
 
 const App = () =>
-  <div style={{ display: 'flex', flexFlow: 'column', justifyContent: 'center', alignItems: 'center' }}>
-    <ItemList />
-    <div>
-      <AddItemButton />
-      <RemoveAllButton />
-    </div>
-    <EditDialog />
-    <GenerateRandomItemesButton />
-    <BackpackList />
-    <Divider />
-    <Summery />
+  <div style={{ display: 'flex', flexFlow: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <Paper style={{ padding: '15px' }} zDepth={3}>
+      <ItemList />
+      <div style={{ textAlign: 'center' }}>
+        <AddItemButton />
+        <RemoveAllButton />
+        <br />
+        <GenerateRandomItemesButton />
+      </div>
+      <EditDialog />
+      <BackpackList />
+      <Divider />
+      <Summery />
+    </Paper>
   </div>
 
 export default App
