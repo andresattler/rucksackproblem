@@ -7,8 +7,9 @@ import { createStore, combineReducers } from 'redux'
 
 import App from './app'
 import reducer from './reducer'
+import dialogReducer from './reducer/dialog-reducer'
 
-const store = createStore(combineReducers({ reducer }),
+const store = createStore(combineReducers({ reducer, dialogReducer }),
 // eslint-disable-next-line no-underscore-dangle
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 

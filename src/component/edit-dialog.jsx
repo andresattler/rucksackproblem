@@ -6,13 +6,34 @@ import TextField from 'material-ui/TextField'
 
 type Props = {
   open: boolean,
-  value: number,
+  initialValue: number,
+  initialWeight: number,
   weight: number,
+  value: number,
+  index: number,
+  weightError: string,
+  valueError: string,
   handleToggle: Function,
+  changeValue: Function,
+  changeWeight: Function,
   handleSubmitt: Function,
+  typeError: Function,
 }
 
-const EditDialog = ({ open, value, weight, handleToggle, handleSubmitt }: Props) => {
+const EditDialog = ({
+  open,
+  initialValue,
+  initialWeight,
+  weight,
+  value,
+  index,
+  weightError,
+  valueError,
+  handleToggle,
+  changeValue,
+  changeWeight,
+  handleSubmitt,
+  typeError }: Props) => {
   const actions = [
     <FlatButton
       label="Abbort"
@@ -24,7 +45,11 @@ const EditDialog = ({ open, value, weight, handleToggle, handleSubmitt }: Props)
       label="Ok"
       primary
       keyboardFocused
-      onTouchTap={handleSubmitt}
+      onTouchTap={() => handleSubmitt({
+        index,
+        value,
+        weight,
+      })}
     />,
   ]
   return (
@@ -36,11 +61,25 @@ const EditDialog = ({ open, value, weight, handleToggle, handleSubmitt }: Props)
     >
       <TextField
         floatingLabelText="Value:"
-        defaultValue={value || ''}
+        defaultValue={initialValue || ''}
+        errorText={valueError}
+        onChange={(e) => {
+          if (!isNaN(e.target.value) && Number.isInteger(parseFloat(e.target.value))) {
+            return changeValue(parseInt(e.target.value, 10))
+          }
+          return typeError('valueError')
+        }}
       />
       <TextField
         floatingLabelText="Weight:"
-        defaultValue={weight || ''}
+        defaultValue={initialWeight || ''}
+        errorText={weightError}
+        onChange={(e) => {
+          if (!isNaN(e.target.value) && Number.isInteger(parseFloat(e.target.value))) {
+            return changeWeight(parseInt(e.target.value, 10))
+          }
+          return typeError('weightError')
+        }}
       />
     </Dialog>
   )
