@@ -16,7 +16,7 @@ type Props = {
   handleToggle: Function,
   changeValue: Function,
   changeWeight: Function,
-  handleSubmitt: Function,
+  handleSubmit: Function,
   typeError: Function,
 }
 
@@ -32,7 +32,7 @@ const EditDialog = ({
   handleToggle,
   changeValue,
   changeWeight,
-  handleSubmitt,
+  handleSubmit,
   typeError }: Props) => {
   const actions = [
     <FlatButton
@@ -45,7 +45,7 @@ const EditDialog = ({
       label="Ok"
       primary
       keyboardFocused
-      onTouchTap={() => handleSubmitt({
+      onTouchTap={() => handleSubmit({
         index,
         value,
         weight,
@@ -63,6 +63,11 @@ const EditDialog = ({
         floatingLabelText="Value:"
         defaultValue={initialValue || ''}
         errorText={valueError}
+        onKeyPress={e => e.charCode === 13 && !valueError && !weightError && handleSubmit({
+          index,
+          value,
+          weight,
+        })}
         onChange={(e) => {
           if (!isNaN(e.target.value) && Number.isInteger(parseFloat(e.target.value))) {
             return changeValue(parseInt(e.target.value, 10))
@@ -74,6 +79,11 @@ const EditDialog = ({
         floatingLabelText="Weight:"
         defaultValue={initialWeight || ''}
         errorText={weightError}
+        onKeyPress={e => e.charCode === 13 && !valueError && !weightError && handleSubmit({
+          index,
+          value,
+          weight,
+        })}
         onChange={(e) => {
           if (!isNaN(e.target.value) && Number.isInteger(parseFloat(e.target.value))) {
             return changeWeight(parseInt(e.target.value, 10))

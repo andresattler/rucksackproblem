@@ -40,6 +40,7 @@ const GenerateDialog =
         floatingLabelText="Number of items:"
         defaultValue={numberOfItems}
         errorText={error}
+        onKeyPress={e => e.charCode === 13 && !error && handleSubmit(numberOfItems)}
         onChange={(e) => {
           if (!isNaN(e.target.value) && Number.isInteger(parseFloat(e.target.value))) {
             return handleChange(parseInt(e.target.value, 10))

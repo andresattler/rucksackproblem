@@ -21,7 +21,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   handleToggle: () => dispatch(toggleEditDialog()),
-  handleSubmitt: (data) => {
+  handleSubmit: (data) => {
     dispatch(editItem(data))
     dispatch(toggleEditDialog())
     dispatch(packBackpack())
