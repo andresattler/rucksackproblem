@@ -3,7 +3,7 @@ function randomInt(max) {
   return Math.floor((Math.random() * max) + 1)
 }
 
-function generateItems(numberOfItems) {
+function generateItems(numberOfItems: number) {
   return [...Array(numberOfItems).keys()].reduce((obj, i) => {
     const weight = randomInt(15)
     const value = randomInt(100)

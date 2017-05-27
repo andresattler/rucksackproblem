@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { generateRandomItems, packBackpack } from '../action'
+import { toggleGenerateDialog } from '../action'
 
 import Button from '../component/button'
 
@@ -10,8 +10,7 @@ const mapStateToProps = () => ({
 
 const mapDispatchToProps = dispatch => ({
   handleClick: () => {
-    dispatch(generateRandomItems())
-    dispatch(packBackpack())
+    dispatch(toggleGenerateDialog())
   },
 })
 

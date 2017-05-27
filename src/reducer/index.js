@@ -15,7 +15,7 @@ const initialState = Immutable.fromJS({
 const reducer = (state: Immut = initialState, action: {type: string, payload: any }) => {
   switch (action.type) {
     case GENERATE_RANDOM_ITEMS:
-      return state.set('items', randomItems(10))
+      return state.set('items', randomItems(action.payload))
     case REMOVE_ALL:
       return state.merge({ items: {}, backpack: [] })
     case EDIT_ITEM: {

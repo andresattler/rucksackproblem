@@ -6,16 +6,16 @@ import EditDialog from '../component/edit-dialog'
 
 const mapStateToProps = (state) => {
   const items = state.reducer.get('items')
-  const index = state.dialogReducer.get('selectedItemIndex')
+  const index = state.editDialogReducer.get('selectedItemIndex')
   return {
-    open: state.dialogReducer.get('showEditDialog'),
+    open: state.editDialogReducer.get('showEditDialog'),
     initialValue: index > -1 ? items[index].value : undefined,
     initialWeight: index > -1 ? items[index].weight : undefined,
     index,
-    weight: state.dialogReducer.get('weight'),
-    value: state.dialogReducer.get('value'),
-    weightError: state.dialogReducer.get('weightError'),
-    valueError: state.dialogReducer.get('valueError'),
+    weight: state.editDialogReducer.get('weight'),
+    value: state.editDialogReducer.get('value'),
+    weightError: state.editDialogReducer.get('weightError'),
+    valueError: state.editDialogReducer.get('valueError'),
   }
 }
 

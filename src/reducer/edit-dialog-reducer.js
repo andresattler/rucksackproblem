@@ -14,7 +14,7 @@ const InitialState = Immutable.fromJS({
   valueError: '',
 })
 
-const dialogReducer = (state: Immut = InitialState, action: {type: string, payload: any}) => {
+const editDialogReducer = (state: Immut = InitialState, action: {type: string, payload: any}) => {
   switch (action.type) {
     case SELECT_ITEM:
       return state.set('selectedItemIndex', action.payload)
@@ -31,4 +31,4 @@ const dialogReducer = (state: Immut = InitialState, action: {type: string, paylo
   }
 }
 
-export default dialogReducer
+export default editDialogReducer

@@ -10,6 +10,7 @@ import ItemList from './container/item-list'
 import AddItemButton from './container/add-item-button'
 import RemoveAllButton from './container/remove-all-button'
 import EditDialog from './container/edit-dialog'
+import GenerateDialog from './container/generate-dialog'
 import BackpackList from './container/backpack-list'
 import Summery from './container/summery'
 
@@ -28,6 +29,7 @@ const App = () =>
         <GenerateRandomItemesButton />
       </div>
       <EditDialog />
+      <GenerateDialog />
       <BackpackList />
       <Divider />
       <Summery />
