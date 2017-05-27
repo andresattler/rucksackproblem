@@ -4,6 +4,8 @@ export const GENERATE_RANDOM_ITEMS = 'GENERATE_RANDOM_ITEMS'
 export const REMOVE_ALL = 'REMOVE_ALL'
 export const EDIT_ITEM = 'EDIT_ITEM'
 export const ADD_ITEM = 'ADD_ITEM'
+export const CHANGE_MAX_WEIGHT = 'CHANGE_MAX_WEIGHT'
+export const MAX_WEIGHT_ERROR = 'MAX_WEIGHT_ERROR'
 export const PACK_BACKPACK = 'PACK_BACKPACK'
 
 // Edit dialog related
@@ -22,6 +24,8 @@ export const generateRandomItems = createAction(GENERATE_RANDOM_ITEMS)
 export const removeAll = createAction(REMOVE_ALL)
 export const editItem = createAction(EDIT_ITEM)
 export const addItem = createAction(ADD_ITEM)
+export const changeMaxWeight = createAction(CHANGE_MAX_WEIGHT)
+export const maxWeightError = createAction(MAX_WEIGHT_ERROR)
 export const packBackpack = createAction(PACK_BACKPACK)
 
 // Edit dialog related

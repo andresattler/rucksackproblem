@@ -9,6 +9,7 @@ import GenerateRandomItemesButton from './container/generate-random-items-button
 import ItemList from './container/item-list'
 import AddItemButton from './container/add-item-button'
 import RemoveAllButton from './container/remove-all-button'
+import MaxWeightTextField from './container/max-weight-text-field'
 import EditDialog from './container/edit-dialog'
 import GenerateDialog from './container/generate-dialog'
 import BackpackList from './container/backpack-list'
@@ -27,6 +28,8 @@ const App = () =>
         <RemoveAllButton />
         <br />
         <GenerateRandomItemesButton />
+        <br />
+        <MaxWeightTextField />
       </div>
       <EditDialog />
       <GenerateDialog />
