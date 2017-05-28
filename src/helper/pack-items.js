@@ -1,16 +1,16 @@
 /* eslint comma-dangle: ["error", "never"]*/
 
 export default (items, maxWeight) => {
-  console.log(items)
   const sortedItems = [...Object.values(items)].sort((a, b) => b.valuePerWeight - a.valuePerWeight)
-  function fillBackpack(backpack = [], currentWeight = 0, i = -1) {
-    if (currentWeight + sortedItems[i + 1].weight < maxWeight && i + 2 < sortedItems.length) {
+
+  function fillBackpack(backpack = [], currentWeight = 0, i = 0) {
+    if (i + 1 <= sortedItems.length && currentWeight + sortedItems[i].weight <= maxWeight) {
       return fillBackpack(
-        backpack.concat(sortedItems[i + 1]),
-        currentWeight + sortedItems[i + 1].weight,
+        backpack.concat(sortedItems[i]),
+        currentWeight + sortedItems[i].weight,
         i + 1
       )
-    } else if (currentWeight < maxWeight && i + 2 < sortedItems.length) {
+    } else if (i + 1 < sortedItems.length && currentWeight <= maxWeight) {
       return fillBackpack(
         backpack,
         currentWeight,
