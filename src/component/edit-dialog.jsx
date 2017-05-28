@@ -47,7 +47,7 @@ const EditDialog = ({
       label="Ok"
       primary
       keyboardFocused
-      onTouchTap={() => !valueError && !weightError && handleSubmit({
+      onTouchTap={() => value && weight && !valueError && !weightError && handleSubmit({
         index,
         value,
         weight,
