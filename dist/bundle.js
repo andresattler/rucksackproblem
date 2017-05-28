@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "82d86f2f0c03b058fbdf"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0883f4268756e1239a6f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -59674,7 +59674,7 @@ module.exports = function (module) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.numberError = exports.changeNumberOfItems = exports.toggleGenerateDialog = exports.typeError = exports.changeValue = exports.changeWeight = exports.toggleEditDialog = exports.selectItem = exports.packBackpack = exports.maxWeightError = exports.changeMaxWeight = exports.deleteItem = exports.addItem = exports.editItem = exports.removeAll = exports.generateRandomItems = exports.NUMBER_ERROR = exports.CHANGE_NUMBER_OF_ITEMS = exports.TOGGLE_GENERATE_DIALOG = exports.TYPE_ERROR = exports.CHANGE_VALUE = exports.CHANGE_WEIGHT = exports.TOGGLE_EDIT_DIALOG = exports.SELECT_ITEM = exports.PACK_BACKPACK = exports.MAX_WEIGHT_ERROR = exports.CHANGE_MAX_WEIGHT = exports.DELETE_ITEM = exports.ADD_ITEM = exports.EDIT_ITEM = exports.REMOVE_ALL = exports.GENERATE_RANDOM_ITEMS = undefined;
+exports.numberError = exports.changeNumberOfItems = exports.toggleGenerateDialog = exports.typeError = exports.changeValue = exports.changeWeight = exports.toggleEditDialog = exports.selectItem = exports.packBackpack = exports.maxWeightError = exports.changeMaxWeight = exports.deleteItem = exports.editItem = exports.removeAll = exports.generateRandomItems = exports.NUMBER_ERROR = exports.CHANGE_NUMBER_OF_ITEMS = exports.TOGGLE_GENERATE_DIALOG = exports.TYPE_ERROR = exports.CHANGE_VALUE = exports.CHANGE_WEIGHT = exports.TOGGLE_EDIT_DIALOG = exports.SELECT_ITEM = exports.PACK_BACKPACK = exports.MAX_WEIGHT_ERROR = exports.CHANGE_MAX_WEIGHT = exports.DELETE_ITEM = exports.EDIT_ITEM = exports.REMOVE_ALL = exports.GENERATE_RANDOM_ITEMS = undefined;
 
 var _reduxActions = __webpack_require__("./node_modules/redux-actions/es/index.js");
 
@@ -59682,7 +59682,6 @@ var _reduxActions = __webpack_require__("./node_modules/redux-actions/es/index.j
 var GENERATE_RANDOM_ITEMS = exports.GENERATE_RANDOM_ITEMS = 'GENERATE_RANDOM_ITEMS';
 var REMOVE_ALL = exports.REMOVE_ALL = 'REMOVE_ALL';
 var EDIT_ITEM = exports.EDIT_ITEM = 'EDIT_ITEM';
-var ADD_ITEM = exports.ADD_ITEM = 'ADD_ITEM';
 var DELETE_ITEM = exports.DELETE_ITEM = 'DELETE_ITEM';
 var CHANGE_MAX_WEIGHT = exports.CHANGE_MAX_WEIGHT = 'CHANGE_MAX_WEIGHT';
 var MAX_WEIGHT_ERROR = exports.MAX_WEIGHT_ERROR = 'MAX_WEIGHT_ERROR';
@@ -59703,7 +59702,6 @@ var NUMBER_ERROR = exports.NUMBER_ERROR = 'NUMBER_ERROR';
 var generateRandomItems = exports.generateRandomItems = (0, _reduxActions.createAction)(GENERATE_RANDOM_ITEMS);
 var removeAll = exports.removeAll = (0, _reduxActions.createAction)(REMOVE_ALL);
 var editItem = exports.editItem = (0, _reduxActions.createAction)(EDIT_ITEM);
-var addItem = exports.addItem = (0, _reduxActions.createAction)(ADD_ITEM);
 var deleteItem = exports.deleteItem = (0, _reduxActions.createAction)(DELETE_ITEM);
 var changeMaxWeight = exports.changeMaxWeight = (0, _reduxActions.createAction)(CHANGE_MAX_WEIGHT);
 var maxWeightError = exports.maxWeightError = (0, _reduxActions.createAction)(MAX_WEIGHT_ERROR);
