@@ -1,12 +1,15 @@
 import { connect } from 'react-redux'
 
-import { toggleEditDialog, selectItem, changeValue, changeWeight } from '../action'
+import { toggleEditDialog, selectItem, changeValue, changeWeight, deleteItem, packBackpack } from '../action'
 
 import ItemList from '../component/list'
 
 const mapStateToProps = (state) => {
   const items = state.reducer.get('items')
-  return { items: items.size === 0 ? [] : Object.values(items) }
+  return {
+    items: items.size === 0 ? [] : Object.values(items),
+    editable: true,
+  }
 }
 const mapDispatchToProps = dispatch => ({
   handleClick: (target, value, weight) => {
@@ -14,6 +17,10 @@ const mapDispatchToProps = dispatch => ({
     dispatch(toggleEditDialog())
     dispatch(changeValue(value))
     dispatch(changeWeight(weight))
+  },
+  deleteItem: (id) => {
+    dispatch(deleteItem(id))
+    dispatch(packBackpack())
   },
 })
 

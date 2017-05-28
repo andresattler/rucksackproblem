@@ -2,7 +2,7 @@
 import Immutable from 'immutable'
 import type { fromJS as Immut } from 'immutable'
 
-import { GENERATE_RANDOM_ITEMS, REMOVE_ALL, EDIT_ITEM, CHANGE_MAX_WEIGHT, MAX_WEIGHT_ERROR, PACK_BACKPACK } from '../action'
+import { GENERATE_RANDOM_ITEMS, REMOVE_ALL, EDIT_ITEM, DELETE_ITEM, CHANGE_MAX_WEIGHT, MAX_WEIGHT_ERROR, PACK_BACKPACK } from '../action'
 
 import packItems from '../helper/pack-items'
 import randomItems from '../helper/random-items'
@@ -33,6 +33,11 @@ const reducer = (state: Immut = initialState, action: {type: string, payload: an
           valuePerWeight: action.payload.value / action.payload.weight,
         },
       }
+      return state.set('items', newItems)
+    }
+    case DELETE_ITEM: {
+      const newItems = Object.assign({}, state.get('items'))
+      delete newItems[action.payload]
       return state.set('items', newItems)
     }
     case CHANGE_MAX_WEIGHT:

@@ -5,10 +5,10 @@ function randomInt(max) {
 
 function generateItems(numberOfItems: number) {
   return [...Array(numberOfItems).keys()].reduce((obj, i) => {
-    const weight = randomInt(15)
     const value = randomInt(100)
+    const weight = randomInt(15)
     // eslint-disable-next-line no-param-reassign
-    obj[i] = { weight, value, valuePerWeight: value / weight }
+    obj[i] = { id: i, value, weight, valuePerWeight: value / weight }
     return obj
   }, {})
 }
