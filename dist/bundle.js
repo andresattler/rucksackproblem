@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8b49100cb7be0b67724e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4272d0ec37c3f1ffc17a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -59637,7 +59637,7 @@ module.exports = function (module) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.typeError = exports.changeValue = exports.changeWeight = exports.toggleEditDialog = exports.selectItem = exports.packBackpack = exports.addItem = exports.editItem = exports.removeAll = exports.generateRandomItems = exports.TYPE_ERROR = exports.CHANGE_VALUE = exports.CHANGE_WEIGHT = exports.TOGGLE_EDIT_DIALOG = exports.SELECT_ITEM = exports.PACK_BACKPACK = exports.ADD_ITEM = exports.EDIT_ITEM = exports.REMOVE_ALL = exports.GENERATE_RANDOM_ITEMS = undefined;
+exports.changeMaxValue = exports.changeMaxWeight = exports.toggleGenerateDialog = exports.changeValue = exports.changeWeight = exports.toggleEditDialog = exports.selectItem = exports.typeError = exports.packBackpack = exports.addItem = exports.editItem = exports.removeAll = exports.generateRandomItems = exports.CHANGE_MAX_VALUE = exports.CHANGE_MAX_WEIGHT = exports.TOGGLE_GENERATE_DIALOG = exports.CHANGE_VALUE = exports.CHANGE_WEIGHT = exports.TOGGLE_EDIT_DIALOG = exports.SELECT_ITEM = exports.TYPE_ERROR = exports.PACK_BACKPACK = exports.ADD_ITEM = exports.EDIT_ITEM = exports.REMOVE_ALL = exports.GENERATE_RANDOM_ITEMS = undefined;
 
 var _reduxActions = __webpack_require__("./node_modules/redux-actions/es/index.js");
 
@@ -59648,11 +59648,18 @@ var ADD_ITEM = exports.ADD_ITEM = 'ADD_ITEM';
 var PACK_BACKPACK = exports.PACK_BACKPACK = 'PACK_BACKPACK';
 
 // Dialog related
+var TYPE_ERROR = exports.TYPE_ERROR = 'TYPE_ERROR';
+
+// Edit dialog related
 var SELECT_ITEM = exports.SELECT_ITEM = 'SELECT_ITEM';
 var TOGGLE_EDIT_DIALOG = exports.TOGGLE_EDIT_DIALOG = 'TOGGLE_EDIT_DIALOG';
 var CHANGE_WEIGHT = exports.CHANGE_WEIGHT = 'CHANGE_WEIGHT';
 var CHANGE_VALUE = exports.CHANGE_VALUE = 'CHANGE_VALUE';
-var TYPE_ERROR = exports.TYPE_ERROR = 'TYPE_ERROR';
+
+// Add dialog related
+var TOGGLE_GENERATE_DIALOG = exports.TOGGLE_GENERATE_DIALOG = 'TOGGLE_GENERATE_DIALOG';
+var CHANGE_MAX_WEIGHT = exports.CHANGE_MAX_WEIGHT = 'CHANGE_MAX_WEIGHT';
+var CHANGE_MAX_VALUE = exports.CHANGE_MAX_VALUE = 'CHANGE_MAX_VALUE';
 
 var generateRandomItems = exports.generateRandomItems = (0, _reduxActions.createAction)(GENERATE_RANDOM_ITEMS);
 var removeAll = exports.removeAll = (0, _reduxActions.createAction)(REMOVE_ALL);
@@ -59661,11 +59668,18 @@ var addItem = exports.addItem = (0, _reduxActions.createAction)(ADD_ITEM);
 var packBackpack = exports.packBackpack = (0, _reduxActions.createAction)(PACK_BACKPACK);
 
 // Dialog related
+var typeError = exports.typeError = (0, _reduxActions.createAction)(TYPE_ERROR);
+
+// Edit dialog related
 var selectItem = exports.selectItem = (0, _reduxActions.createAction)(SELECT_ITEM);
 var toggleEditDialog = exports.toggleEditDialog = (0, _reduxActions.createAction)(TOGGLE_EDIT_DIALOG);
 var changeWeight = exports.changeWeight = (0, _reduxActions.createAction)(CHANGE_WEIGHT);
 var changeValue = exports.changeValue = (0, _reduxActions.createAction)(CHANGE_VALUE);
-var typeError = exports.typeError = (0, _reduxActions.createAction)(TYPE_ERROR);
+
+// Add dialoog related
+var toggleGenerateDialog = exports.toggleGenerateDialog = (0, _reduxActions.createAction)(TOGGLE_GENERATE_DIALOG);
+var changeMaxWeight = exports.changeMaxWeight = (0, _reduxActions.createAction)(CHANGE_MAX_WEIGHT);
+var changeMaxValue = exports.changeMaxValue = (0, _reduxActions.createAction)(CHANGE_MAX_VALUE);
 
 /***/ }),
 
@@ -59715,6 +59729,10 @@ var _editDialog = __webpack_require__("./src/container/edit-dialog.js");
 
 var _editDialog2 = _interopRequireDefault(_editDialog);
 
+var _generateDialog = __webpack_require__("./src/container/generate-dialog.js");
+
+var _generateDialog2 = _interopRequireDefault(_generateDialog);
+
 var _backpackList = __webpack_require__("./src/container/backpack-list.js");
 
 var _backpackList2 = _interopRequireDefault(_backpackList);
@@ -59746,6 +59764,7 @@ var App = function App() {
         _react2.default.createElement(_generateRandomItemsButton2.default, null)
       ),
       _react2.default.createElement(_editDialog2.default, null),
+      _react2.default.createElement(_generateDialog2.default, null),
       _react2.default.createElement(_backpackList2.default, null),
       _react2.default.createElement(_Divider2.default, null),
       _react2.default.createElement(_summery2.default, null)
@@ -59882,6 +59901,51 @@ var EditDialog = function EditDialog(_ref) {
   );
 };
 exports.default = EditDialog;
+
+/***/ }),
+
+/***/ "./src/component/generate-dialog.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Dialog = __webpack_require__("./node_modules/material-ui/Dialog/index.js");
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+var _FlatButton = __webpack_require__("./node_modules/material-ui/FlatButton/index.js");
+
+var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+var _TextField = __webpack_require__("./node_modules/material-ui/TextField/index.js");
+
+var _TextField2 = _interopRequireDefault(_TextField);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var GenerateDialog = function GenerateDialog(open) {
+  var actions = [_react2.default.createElement(_FlatButton2.default, { label: 'Abbort' }), _react2.default.createElement(_FlatButton2.default, { label: 'OK' })];
+  return _react2.default.createElement(
+    _Dialog2.default,
+    {
+      actions: actions,
+      open: open
+    },
+    _react2.default.createElement(_TextField2.default, null),
+    _react2.default.createElement(_TextField2.default, null),
+    _react2.default.createElement(_TextField2.default, null)
+  );
+};
+exports.default = GenerateDialog;
 
 /***/ }),
 
@@ -60096,6 +60160,59 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 
 /***/ }),
 
+/***/ "./src/container/generate-dialog.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__("./node_modules/react-redux/es/index.js");
+
+var _action = __webpack_require__("./src/action/index.js");
+
+var _generateDialog = __webpack_require__("./src/component/generate-dialog.jsx");
+
+var _generateDialog2 = _interopRequireDefault(_generateDialog);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  console.log(state);
+  return {
+    open: state.generateDialogReducer.get('showGenerateDialog')
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    handleToggle: function handleToggle() {
+      return dispatch((0, _action.toggleEditDialog)());
+    },
+    handleSubmitt: function handleSubmitt(data) {
+      dispatch((0, _action.editItem)(data));
+      dispatch((0, _action.toggleEditDialog)());
+      dispatch((0, _action.packBackpack)());
+    },
+    changeValue: function changeValue(value) {
+      return dispatch((0, _action.changeValue)(value));
+    },
+    changeWeight: function changeWeight(weight) {
+      return dispatch((0, _action.changeWeight)(weight));
+    },
+    typeError: function typeError(type) {
+      return dispatch((0, _action.typeError)(type));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_generateDialog2.default);
+
+/***/ }),
+
 /***/ "./src/container/generate-random-items-button.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -60125,6 +60242,7 @@ var mapStateToProps = function mapStateToProps() {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     handleClick: function handleClick() {
+      dispatch((0, _action.toggleGenerateDialog)());
       dispatch((0, _action.generateRandomItems)());
       dispatch((0, _action.packBackpack)());
     }
@@ -60338,13 +60456,17 @@ var _reducer = __webpack_require__("./src/reducer/index.js");
 
 var _reducer2 = _interopRequireDefault(_reducer);
 
-var _dialogReducer = __webpack_require__("./src/reducer/dialog-reducer.js");
+var _editDialogReducer = __webpack_require__("./src/reducer/edit-dialog-reducer.js");
 
-var _dialogReducer2 = _interopRequireDefault(_dialogReducer);
+var _editDialogReducer2 = _interopRequireDefault(_editDialogReducer);
+
+var _generateDialogReducer = __webpack_require__("./src/reducer/generate-dialog-reducer.js");
+
+var _generateDialogReducer2 = _interopRequireDefault(_generateDialogReducer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var store = (0, _redux.createStore)((0, _redux.combineReducers)({ reducer: _reducer2.default, dialogReducer: _dialogReducer2.default }),
+var store = (0, _redux.createStore)((0, _redux.combineReducers)({ reducer: _reducer2.default, editDialogReducer: _editDialogReducer2.default, generateDialogReducer: _generateDialogReducer2.default }),
 // eslint-disable-next-line no-underscore-dangle
 window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
@@ -60378,7 +60500,7 @@ if (true) {
 
 /***/ }),
 
-/***/ "./src/reducer/dialog-reducer.js":
+/***/ "./src/reducer/edit-dialog-reducer.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60426,6 +60548,55 @@ var dialogReducer = function dialogReducer() {
 };
 
 exports.default = dialogReducer;
+
+/***/ }),
+
+/***/ "./src/reducer/generate-dialog-reducer.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _immutable = __webpack_require__("./node_modules/immutable/dist/immutable.js");
+
+var _immutable2 = _interopRequireDefault(_immutable);
+
+var _action = __webpack_require__("./src/action/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var InitialState = _immutable2.default.fromJS({
+  showGenerateDialog: false,
+  maxWeight: null,
+  maxValue: null,
+  numerOfItems: 10,
+  weightError: '',
+  valueError: ''
+});
+
+var generateDialogReducer = function generateDialogReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : InitialState;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case _action.TOGGLE_GENERATE_DIALOG:
+      return state.set('showGenerateDialog', !state.get('showGenerateDialog'));
+    case _action.CHANGE_MAX_WEIGHT:
+      return state.merge({ maxWeight: action.payload, weightError: '' });
+    case _action.CHANGE_MAX_VALUE:
+      return state.merge({ maxValue: action.payload, valueError: '' });
+    case _action.TYPE_ERROR:
+      return state.set(action.payload, 'not an integer');
+    default:
+      return state;
+  }
+};
+
+exports.default = generateDialogReducer;
 
 /***/ }),
 

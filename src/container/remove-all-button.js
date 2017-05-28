@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { removeAll } from '../action'
+import { removeAll, changeNumberOfItems } from '../action'
 
 import Button from '../component/button'
 
@@ -11,6 +11,7 @@ const mapStateToProps = () => ({
 const mapDispatchToProps = dispatch => ({
   handleClick: () => {
     dispatch(removeAll())
+    dispatch(changeNumberOfItems(0))
   },
 })
 

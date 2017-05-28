@@ -38,7 +38,7 @@ const GenerateDialog =
     >
       <TextField
         floatingLabelText="Number of items:"
-        defaultValue={numberOfItems}
+        defaultValue="10"
         errorText={error}
         onKeyPress={e => e.charCode === 13 && !error && handleSubmit(numberOfItems)}
         onChange={(e) => {

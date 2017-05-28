@@ -14,6 +14,7 @@ const initialState = Immutable.fromJS({
   maxWeightErrorText: '',
 })
 
+
 const reducer = (state: Immut = initialState, action: {type: string, payload: any }) => {
   switch (action.type) {
     case GENERATE_RANDOM_ITEMS:
@@ -21,7 +22,8 @@ const reducer = (state: Immut = initialState, action: {type: string, payload: an
     case REMOVE_ALL:
       return state.merge({ items: {}, backpack: [] })
     case EDIT_ITEM: {
-      const items = state.get('items')
+      const prevItems = state.get('items')
+      const items = prevItems.size === 0 ? {} : prevItems
       const index = action.payload.index
       const newItems = {
         ...items,

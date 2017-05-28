@@ -11,6 +11,7 @@ type Props = {
   weight: number,
   value: number,
   index: number,
+  newLength: number,
   weightError: string,
   valueError: string,
   handleToggle: Function,
@@ -27,6 +28,7 @@ const EditDialog = ({
   weight,
   value,
   index,
+  newLength,
   weightError,
   valueError,
   handleToggle,
@@ -49,13 +51,12 @@ const EditDialog = ({
         index,
         value,
         weight,
-      })}
+      }, newLength)}
     />,
   ]
   return (
     <Dialog
       actions={actions}
-      title="Test"
       open={open}
       onRequestClose={handleToggle}
     >

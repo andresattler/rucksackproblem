@@ -1,17 +1,18 @@
 import { connect } from 'react-redux'
 
-import { toggleEditDialog, packBackpack } from '../action'
+import { selectItem, toggleEditDialog } from '../action'
 
 import Button from '../component/button'
 
-const mapStateToProps = () => ({
+const mapStateToProps = state => ({
   label: 'Add item',
+  index: state.generateDialogReducer.get('numberOfItems'),
 })
 
 const mapDispatchToProps = dispatch => ({
-  handleClick: () => {
+  handleClick: (index) => {
+    dispatch(selectItem(index))
     dispatch(toggleEditDialog())
-    dispatch(packBackpack())
   },
 })
 

@@ -6,7 +6,7 @@ import GenerateDialog from '../component/generate-dialog'
 
 const mapStateToProps = state => ({
   open: state.generateDialogReducer.get('showGenerateDialog'),
-  numberOfItems: state.generateDialogReducer.get('numberOfItems'),
+  numberOfItems: state.generateDialogReducer.get('numberOfItems') || 10,
   error: state.generateDialogReducer.get('error'),
 })
 
@@ -15,6 +15,7 @@ const mapDispatchToProps = dispatch => ({
   handleToggle: () => dispatch(toggleGenerateDialog()),
   handleSubmit: (val) => {
     dispatch(generateRandomItems(val))
+    dispatch(changeNumberOfItems(val))
     dispatch(packBackpack())
     dispatch(toggleGenerateDialog())
   },

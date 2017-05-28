@@ -7,7 +7,7 @@ import { TOGGLE_GENERATE_DIALOG, CHANGE_NUMBER_OF_ITEMS, NUMBER_ERROR } from '..
 
 const InitialState = Immutable.fromJS({
   showGenerateDialog: false,
-  numberOfItems: 10,
+  numberOfItems: 0,
   error: '',
 })
 
