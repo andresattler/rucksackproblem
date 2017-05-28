@@ -30,11 +30,11 @@ yarn start
 
 now you can view this web app on localhost on port 8000
 
-## Build With
+## Developed With
 
-*React
-*Redux
-*Material-ui
-*Webpack
-*Babel
-*ES6
+* React
+* Redux
+* Material-ui
+* Webpack
+* Babel
+* ES6
