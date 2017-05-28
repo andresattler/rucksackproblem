@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "4272d0ec37c3f1ffc17a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "82d86f2f0c03b058fbdf"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -31304,6 +31304,43 @@ exports.default = {
 
 /***/ }),
 
+/***/ "./node_modules/material-ui/svg-icons/action/delete.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _pure = __webpack_require__("./node_modules/recompose/pure.js");
+
+var _pure2 = _interopRequireDefault(_pure);
+
+var _SvgIcon = __webpack_require__("./node_modules/material-ui/SvgIcon/index.js");
+
+var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+var ActionDelete = function ActionDelete(props) {
+  return _react2.default.createElement(_SvgIcon2.default, props, _react2.default.createElement('path', { d: 'M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z' }));
+};
+ActionDelete = (0, _pure2.default)(ActionDelete);
+ActionDelete.displayName = 'ActionDelete';
+ActionDelete.muiName = 'SvgIcon';
+
+exports.default = ActionDelete;
+
+/***/ }),
+
 /***/ "./node_modules/material-ui/svg-icons/navigation/expand-less.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -59637,49 +59674,52 @@ module.exports = function (module) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.changeMaxValue = exports.changeMaxWeight = exports.toggleGenerateDialog = exports.changeValue = exports.changeWeight = exports.toggleEditDialog = exports.selectItem = exports.typeError = exports.packBackpack = exports.addItem = exports.editItem = exports.removeAll = exports.generateRandomItems = exports.CHANGE_MAX_VALUE = exports.CHANGE_MAX_WEIGHT = exports.TOGGLE_GENERATE_DIALOG = exports.CHANGE_VALUE = exports.CHANGE_WEIGHT = exports.TOGGLE_EDIT_DIALOG = exports.SELECT_ITEM = exports.TYPE_ERROR = exports.PACK_BACKPACK = exports.ADD_ITEM = exports.EDIT_ITEM = exports.REMOVE_ALL = exports.GENERATE_RANDOM_ITEMS = undefined;
+exports.numberError = exports.changeNumberOfItems = exports.toggleGenerateDialog = exports.typeError = exports.changeValue = exports.changeWeight = exports.toggleEditDialog = exports.selectItem = exports.packBackpack = exports.maxWeightError = exports.changeMaxWeight = exports.deleteItem = exports.addItem = exports.editItem = exports.removeAll = exports.generateRandomItems = exports.NUMBER_ERROR = exports.CHANGE_NUMBER_OF_ITEMS = exports.TOGGLE_GENERATE_DIALOG = exports.TYPE_ERROR = exports.CHANGE_VALUE = exports.CHANGE_WEIGHT = exports.TOGGLE_EDIT_DIALOG = exports.SELECT_ITEM = exports.PACK_BACKPACK = exports.MAX_WEIGHT_ERROR = exports.CHANGE_MAX_WEIGHT = exports.DELETE_ITEM = exports.ADD_ITEM = exports.EDIT_ITEM = exports.REMOVE_ALL = exports.GENERATE_RANDOM_ITEMS = undefined;
 
 var _reduxActions = __webpack_require__("./node_modules/redux-actions/es/index.js");
 
+// general
 var GENERATE_RANDOM_ITEMS = exports.GENERATE_RANDOM_ITEMS = 'GENERATE_RANDOM_ITEMS';
 var REMOVE_ALL = exports.REMOVE_ALL = 'REMOVE_ALL';
 var EDIT_ITEM = exports.EDIT_ITEM = 'EDIT_ITEM';
 var ADD_ITEM = exports.ADD_ITEM = 'ADD_ITEM';
+var DELETE_ITEM = exports.DELETE_ITEM = 'DELETE_ITEM';
+var CHANGE_MAX_WEIGHT = exports.CHANGE_MAX_WEIGHT = 'CHANGE_MAX_WEIGHT';
+var MAX_WEIGHT_ERROR = exports.MAX_WEIGHT_ERROR = 'MAX_WEIGHT_ERROR';
 var PACK_BACKPACK = exports.PACK_BACKPACK = 'PACK_BACKPACK';
-
-// Dialog related
-var TYPE_ERROR = exports.TYPE_ERROR = 'TYPE_ERROR';
 
 // Edit dialog related
 var SELECT_ITEM = exports.SELECT_ITEM = 'SELECT_ITEM';
 var TOGGLE_EDIT_DIALOG = exports.TOGGLE_EDIT_DIALOG = 'TOGGLE_EDIT_DIALOG';
 var CHANGE_WEIGHT = exports.CHANGE_WEIGHT = 'CHANGE_WEIGHT';
 var CHANGE_VALUE = exports.CHANGE_VALUE = 'CHANGE_VALUE';
+var TYPE_ERROR = exports.TYPE_ERROR = 'TYPE_ERROR';
 
-// Add dialog related
+// Generate dialog related
 var TOGGLE_GENERATE_DIALOG = exports.TOGGLE_GENERATE_DIALOG = 'TOGGLE_GENERATE_DIALOG';
-var CHANGE_MAX_WEIGHT = exports.CHANGE_MAX_WEIGHT = 'CHANGE_MAX_WEIGHT';
-var CHANGE_MAX_VALUE = exports.CHANGE_MAX_VALUE = 'CHANGE_MAX_VALUE';
-
+var CHANGE_NUMBER_OF_ITEMS = exports.CHANGE_NUMBER_OF_ITEMS = 'CHANGE_NUMBER_OF_ITEMS';
+var NUMBER_ERROR = exports.NUMBER_ERROR = 'NUMBER_ERROR';
+// general
 var generateRandomItems = exports.generateRandomItems = (0, _reduxActions.createAction)(GENERATE_RANDOM_ITEMS);
 var removeAll = exports.removeAll = (0, _reduxActions.createAction)(REMOVE_ALL);
 var editItem = exports.editItem = (0, _reduxActions.createAction)(EDIT_ITEM);
 var addItem = exports.addItem = (0, _reduxActions.createAction)(ADD_ITEM);
+var deleteItem = exports.deleteItem = (0, _reduxActions.createAction)(DELETE_ITEM);
+var changeMaxWeight = exports.changeMaxWeight = (0, _reduxActions.createAction)(CHANGE_MAX_WEIGHT);
+var maxWeightError = exports.maxWeightError = (0, _reduxActions.createAction)(MAX_WEIGHT_ERROR);
 var packBackpack = exports.packBackpack = (0, _reduxActions.createAction)(PACK_BACKPACK);
-
-// Dialog related
-var typeError = exports.typeError = (0, _reduxActions.createAction)(TYPE_ERROR);
 
 // Edit dialog related
 var selectItem = exports.selectItem = (0, _reduxActions.createAction)(SELECT_ITEM);
 var toggleEditDialog = exports.toggleEditDialog = (0, _reduxActions.createAction)(TOGGLE_EDIT_DIALOG);
 var changeWeight = exports.changeWeight = (0, _reduxActions.createAction)(CHANGE_WEIGHT);
 var changeValue = exports.changeValue = (0, _reduxActions.createAction)(CHANGE_VALUE);
+var typeError = exports.typeError = (0, _reduxActions.createAction)(TYPE_ERROR);
 
-// Add dialoog related
+// Generate dialoog related
 var toggleGenerateDialog = exports.toggleGenerateDialog = (0, _reduxActions.createAction)(TOGGLE_GENERATE_DIALOG);
-var changeMaxWeight = exports.changeMaxWeight = (0, _reduxActions.createAction)(CHANGE_MAX_WEIGHT);
-var changeMaxValue = exports.changeMaxValue = (0, _reduxActions.createAction)(CHANGE_MAX_VALUE);
+var changeNumberOfItems = exports.changeNumberOfItems = (0, _reduxActions.createAction)(CHANGE_NUMBER_OF_ITEMS);
+var numberError = exports.numberError = (0, _reduxActions.createAction)(NUMBER_ERROR);
 
 /***/ }),
 
@@ -59725,6 +59765,10 @@ var _removeAllButton = __webpack_require__("./src/container/remove-all-button.js
 
 var _removeAllButton2 = _interopRequireDefault(_removeAllButton);
 
+var _maxWeightTextField = __webpack_require__("./src/container/max-weight-text-field.js");
+
+var _maxWeightTextField2 = _interopRequireDefault(_maxWeightTextField);
+
 var _editDialog = __webpack_require__("./src/container/edit-dialog.js");
 
 var _editDialog2 = _interopRequireDefault(_editDialog);
@@ -59761,7 +59805,9 @@ var App = function App() {
         _react2.default.createElement(_addItemButton2.default, null),
         _react2.default.createElement(_removeAllButton2.default, null),
         _react2.default.createElement('br', null),
-        _react2.default.createElement(_generateRandomItemsButton2.default, null)
+        _react2.default.createElement(_generateRandomItemsButton2.default, null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(_maxWeightTextField2.default, null)
       ),
       _react2.default.createElement(_editDialog2.default, null),
       _react2.default.createElement(_generateDialog2.default, null),
@@ -59800,8 +59846,11 @@ var Button = function Button(_ref
 // eslint-disable-next-line jsx-boolean-value
 ) {
   var label = _ref.label,
-      handleClick = _ref.handleClick;
-  return _react2.default.createElement(_RaisedButton2.default, { onClick: handleClick, label: label, primary: true });
+      handleClick = _ref.handleClick,
+      index = _ref.index;
+  return _react2.default.createElement(_RaisedButton2.default, { onClick: function onClick() {
+      return handleClick(index);
+    }, label: label, primary: true });
 };
 
 exports.default = Button;
@@ -59843,12 +59892,13 @@ var EditDialog = function EditDialog(_ref) {
       weight = _ref.weight,
       value = _ref.value,
       index = _ref.index,
+      newLength = _ref.newLength,
       weightError = _ref.weightError,
       valueError = _ref.valueError,
       handleToggle = _ref.handleToggle,
       changeValue = _ref.changeValue,
       changeWeight = _ref.changeWeight,
-      handleSubmitt = _ref.handleSubmitt,
+      handleSubmit = _ref.handleSubmit,
       typeError = _ref.typeError;
 
   var actions = [_react2.default.createElement(_FlatButton2.default, {
@@ -59861,18 +59911,17 @@ var EditDialog = function EditDialog(_ref) {
     primary: true,
     keyboardFocused: true,
     onTouchTap: function onTouchTap() {
-      return handleSubmitt({
+      return value && weight && !valueError && !weightError && handleSubmit({
         index: index,
         value: value,
         weight: weight
-      });
+      }, newLength);
     }
   })];
   return _react2.default.createElement(
     _Dialog2.default,
     {
       actions: actions,
-      title: 'Test',
       open: open,
       onRequestClose: handleToggle
     },
@@ -59880,6 +59929,13 @@ var EditDialog = function EditDialog(_ref) {
       floatingLabelText: 'Value:',
       defaultValue: initialValue || '',
       errorText: valueError,
+      onKeyPress: function onKeyPress(e) {
+        return e.charCode === 13 && !valueError && !weightError && handleSubmit({
+          index: index,
+          value: value,
+          weight: weight
+        });
+      },
       onChange: function onChange(e) {
         if (!isNaN(e.target.value) && Number.isInteger(parseFloat(e.target.value))) {
           return changeValue(parseInt(e.target.value, 10));
@@ -59891,6 +59947,13 @@ var EditDialog = function EditDialog(_ref) {
       floatingLabelText: 'Weight:',
       defaultValue: initialWeight || '',
       errorText: weightError,
+      onKeyPress: function onKeyPress(e) {
+        return e.charCode === 13 && !valueError && !weightError && handleSubmit({
+          index: index,
+          value: value,
+          weight: weight
+        });
+      },
       onChange: function onChange(e) {
         if (!isNaN(e.target.value) && Number.isInteger(parseFloat(e.target.value))) {
           return changeWeight(parseInt(e.target.value, 10));
@@ -59932,17 +59995,46 @@ var _TextField2 = _interopRequireDefault(_TextField);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var GenerateDialog = function GenerateDialog(open) {
-  var actions = [_react2.default.createElement(_FlatButton2.default, { label: 'Abbort' }), _react2.default.createElement(_FlatButton2.default, { label: 'OK' })];
+var GenerateDialog = function GenerateDialog(_ref) {
+  var open = _ref.open,
+      numberOfItems = _ref.numberOfItems,
+      error = _ref.error,
+      handleToggle = _ref.handleToggle,
+      handleSubmit = _ref.handleSubmit,
+      handleChange = _ref.handleChange,
+      numberError = _ref.numberError;
+
+  var actions = [_react2.default.createElement(_FlatButton2.default, {
+    label: 'Abbort',
+    onTouchTap: handleToggle
+  }), _react2.default.createElement(_FlatButton2.default, {
+    label: 'OK',
+    onTouchTap: function onTouchTap() {
+      return !error && handleSubmit(numberOfItems);
+    }
+  })];
   return _react2.default.createElement(
     _Dialog2.default,
     {
+      style: { textAlign: 'center' },
       actions: actions,
-      open: open
+      open: open,
+      onRequestClose: handleToggle
     },
-    _react2.default.createElement(_TextField2.default, null),
-    _react2.default.createElement(_TextField2.default, null),
-    _react2.default.createElement(_TextField2.default, null)
+    _react2.default.createElement(_TextField2.default, {
+      floatingLabelText: 'Number of items:',
+      defaultValue: '10',
+      errorText: error,
+      onKeyPress: function onKeyPress(e) {
+        return e.charCode === 13 && !error && handleSubmit(numberOfItems);
+      },
+      onChange: function onChange(e) {
+        if (!isNaN(e.target.value) && Number.isInteger(parseFloat(e.target.value))) {
+          return handleChange(parseInt(e.target.value, 10));
+        }
+        return numberError();
+      }
+    })
   );
 };
 exports.default = GenerateDialog;
@@ -59965,28 +60057,78 @@ var _react2 = _interopRequireDefault(_react);
 
 var _List = __webpack_require__("./node_modules/material-ui/List/index.js");
 
+var _delete = __webpack_require__("./node_modules/material-ui/svg-icons/action/delete.js");
+
+var _delete2 = _interopRequireDefault(_delete);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ItemList = function ItemList(_ref) {
   var items = _ref.items,
-      handleClick = _ref.handleClick;
+      editable = _ref.editable,
+      handleClick = _ref.handleClick,
+      deleteItem = _ref.deleteItem;
   return _react2.default.createElement(
     _List.List,
     { style: { backgroundColor: 'white', height: '35vh', width: '300px', overflowY: 'scroll' } },
     items.map(function (item, i) {
       return _react2.default.createElement(_List.ListItem, {
-        style: { backgroundColor: 'white', textAlign: 'center' },
+        style: { backgroundColor: 'white' },
         key: i.toString(),
-        primaryText: i + '.\n          value: ' + item.value + '\u20AC\n          weight: ' + item.weight + ' kg',
-        onTouchTap: function onTouchTap() {
-          return handleClick(i, item.value, item.weight);
+        primaryText: '\n          value: ' + item.value + '\u20AC\n          weight: ' + item.weight + ' kg',
+        rightIcon: editable ? _react2.default.createElement(_delete2.default, null) : null,
+        onTouchTap: function onTouchTap(e) {
+          if (e.target.tagName === 'DIV') {
+            return handleClick(item.id, item.value, item.weight);
+          }
+          return deleteItem(item.id);
         }
       });
     })
   );
 };
-
 exports.default = ItemList;
+
+/***/ }),
+
+/***/ "./src/component/max-weight-text-field.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _TextField = __webpack_require__("./node_modules/material-ui/TextField/index.js");
+
+var _TextField2 = _interopRequireDefault(_TextField);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var MaxWeightTextField = function MaxWeightTextField(_ref) {
+  var maxWeightErrorText = _ref.maxWeightErrorText,
+      handleChange = _ref.handleChange,
+      maxWeightError = _ref.maxWeightError;
+  return _react2.default.createElement(_TextField2.default, {
+    floatingLabelText: 'Max Weight:',
+    defaultValue: '15',
+    errorText: maxWeightErrorText,
+    onChange: function onChange(e) {
+      if (!isNaN(e.target.value) && Number.isInteger(parseFloat(e.target.value))) {
+        return handleChange(parseInt(e.target.value, 10));
+      }
+      return maxWeightError();
+    }
+  });
+};
+
+exports.default = MaxWeightTextField;
 
 /***/ }),
 
@@ -60052,17 +60194,18 @@ var _button2 = _interopRequireDefault(_button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var mapStateToProps = function mapStateToProps() {
+var mapStateToProps = function mapStateToProps(state) {
   return {
-    label: 'Add item'
+    label: 'Add item',
+    index: state.generateDialogReducer.get('numberOfItems')
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    handleClick: function handleClick() {
+    handleClick: function handleClick(index) {
+      dispatch((0, _action.selectItem)(index));
       dispatch((0, _action.toggleEditDialog)());
-      dispatch((0, _action.packBackpack)());
     }
   };
 };
@@ -60121,16 +60264,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state) {
   var items = state.reducer.get('items');
-  var index = state.dialogReducer.get('selectedItemIndex');
+  var index = state.editDialogReducer.get('selectedItemIndex');
+  var length = items.size === 0 ? 0 : Object.keys(items).length;
   return {
-    open: state.dialogReducer.get('showEditDialog'),
-    initialValue: index > -1 ? items[index].value : undefined,
-    initialWeight: index > -1 ? items[index].weight : undefined,
+    open: state.editDialogReducer.get('showEditDialog'),
+    initialValue: index < length && index > -1 ? items[index].value : '',
+    initialWeight: index < length && index > -1 ? items[index].weight : '',
     index: index,
-    weight: state.dialogReducer.get('weight'),
-    value: state.dialogReducer.get('value'),
-    weightError: state.dialogReducer.get('weightError'),
-    valueError: state.dialogReducer.get('valueError')
+    weight: state.editDialogReducer.get('weight'),
+    value: state.editDialogReducer.get('value'),
+    weightError: state.editDialogReducer.get('weightError'),
+    valueError: state.editDialogReducer.get('valueError'),
+    newLength: index < length ? length : length + 1
   };
 };
 
@@ -60139,8 +60284,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     handleToggle: function handleToggle() {
       return dispatch((0, _action.toggleEditDialog)());
     },
-    handleSubmitt: function handleSubmitt(data) {
+    handleSubmit: function handleSubmit(data, newLength) {
       dispatch((0, _action.editItem)(data));
+      dispatch((0, _action.changeNumberOfItems)(newLength));
       dispatch((0, _action.toggleEditDialog)());
       dispatch((0, _action.packBackpack)());
     },
@@ -60181,30 +60327,29 @@ var _generateDialog2 = _interopRequireDefault(_generateDialog);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state) {
-  console.log(state);
   return {
-    open: state.generateDialogReducer.get('showGenerateDialog')
+    open: state.generateDialogReducer.get('showGenerateDialog'),
+    numberOfItems: state.generateDialogReducer.get('numberOfItems') || 10,
+    error: state.generateDialogReducer.get('error')
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     handleToggle: function handleToggle() {
-      return dispatch((0, _action.toggleEditDialog)());
+      return dispatch((0, _action.toggleGenerateDialog)());
     },
-    handleSubmitt: function handleSubmitt(data) {
-      dispatch((0, _action.editItem)(data));
-      dispatch((0, _action.toggleEditDialog)());
+    handleSubmit: function handleSubmit(val) {
+      dispatch((0, _action.generateRandomItems)(val));
+      dispatch((0, _action.changeNumberOfItems)(val));
       dispatch((0, _action.packBackpack)());
+      dispatch((0, _action.toggleGenerateDialog)());
     },
-    changeValue: function changeValue(value) {
-      return dispatch((0, _action.changeValue)(value));
+    handleChange: function handleChange(val) {
+      return dispatch((0, _action.changeNumberOfItems)(val));
     },
-    changeWeight: function changeWeight(weight) {
-      return dispatch((0, _action.changeWeight)(weight));
-    },
-    typeError: function typeError(type) {
-      return dispatch((0, _action.typeError)(type));
+    numberError: function numberError() {
+      return dispatch((0, _action.numberError)());
     }
   };
 };
@@ -60243,8 +60388,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     handleClick: function handleClick() {
       dispatch((0, _action.toggleGenerateDialog)());
-      dispatch((0, _action.generateRandomItems)());
-      dispatch((0, _action.packBackpack)());
     }
   };
 };
@@ -60275,7 +60418,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state) {
   var items = state.reducer.get('items');
-  return { items: items.size === 0 ? [] : Object.values(items) };
+  return {
+    items: items.size === 0 ? [] : Object.values(items),
+    editable: true
+  };
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
@@ -60284,11 +60430,57 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch((0, _action.toggleEditDialog)());
       dispatch((0, _action.changeValue)(value));
       dispatch((0, _action.changeWeight)(weight));
+    },
+    deleteItem: function deleteItem(id) {
+      dispatch((0, _action.deleteItem)(id));
+      dispatch((0, _action.packBackpack)());
     }
   };
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_list2.default);
+
+/***/ }),
+
+/***/ "./src/container/max-weight-text-field.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__("./node_modules/react-redux/es/index.js");
+
+var _action = __webpack_require__("./src/action/index.js");
+
+var _maxWeightTextField = __webpack_require__("./src/component/max-weight-text-field.jsx");
+
+var _maxWeightTextField2 = _interopRequireDefault(_maxWeightTextField);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    maxWeightErrorText: state.reducer.get('maxWeightErrorText')
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    handleChange: function handleChange(val) {
+      dispatch((0, _action.changeMaxWeight)(val));
+      dispatch((0, _action.packBackpack)());
+    },
+    maxWeightError: function maxWeightError() {
+      return dispatch((0, _action.maxWeightError)());
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_maxWeightTextField2.default);
 
 /***/ }),
 
@@ -60322,6 +60514,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     handleClick: function handleClick() {
       dispatch((0, _action.removeAll)());
+      dispatch((0, _action.changeNumberOfItems)(0));
     }
   };
 };
@@ -60380,11 +60573,11 @@ exports.default = function (items, maxWeight) {
   function fillBackpack() {
     var backpack = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var currentWeight = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-    var i = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : -1;
+    var i = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
-    if (currentWeight + sortedItems[i + 1].weight < maxWeight && i + 2 < sortedItems.length) {
-      return fillBackpack(backpack.concat(sortedItems[i + 1]), currentWeight + sortedItems[i + 1].weight, i + 1);
-    } else if (currentWeight < maxWeight && i + 2 < sortedItems.length) {
+    if (i + 1 <= sortedItems.length && currentWeight + sortedItems[i].weight <= maxWeight) {
+      return fillBackpack(backpack.concat(sortedItems[i]), currentWeight + sortedItems[i].weight, i + 1);
+    } else if (i + 1 < sortedItems.length && currentWeight <= maxWeight) {
       return fillBackpack(backpack, currentWeight, i + 1);
     }
     return backpack;
@@ -60412,10 +60605,10 @@ function randomInt(max) {
 
 function generateItems(numberOfItems) {
   return [].concat(_toConsumableArray(Array(numberOfItems).keys())).reduce(function (obj, i) {
-    var weight = randomInt(15);
     var value = randomInt(100);
+    var weight = randomInt(15);
     // eslint-disable-next-line no-param-reassign
-    obj[i] = { weight: weight, value: value, valuePerWeight: value / weight };
+    obj[i] = { id: i, value: value, weight: weight, valuePerWeight: value / weight };
     return obj;
   }, {});
 }
@@ -60527,7 +60720,7 @@ var InitialState = _immutable2.default.fromJS({
   valueError: ''
 });
 
-var dialogReducer = function dialogReducer() {
+var editDialogReducer = function editDialogReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : InitialState;
   var action = arguments[1];
 
@@ -60547,7 +60740,7 @@ var dialogReducer = function dialogReducer() {
   }
 };
 
-exports.default = dialogReducer;
+exports.default = editDialogReducer;
 
 /***/ }),
 
@@ -60571,11 +60764,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var InitialState = _immutable2.default.fromJS({
   showGenerateDialog: false,
-  maxWeight: null,
-  maxValue: null,
-  numerOfItems: 10,
-  weightError: '',
-  valueError: ''
+  numberOfItems: 0,
+  error: ''
 });
 
 var generateDialogReducer = function generateDialogReducer() {
@@ -60585,12 +60775,10 @@ var generateDialogReducer = function generateDialogReducer() {
   switch (action.type) {
     case _action.TOGGLE_GENERATE_DIALOG:
       return state.set('showGenerateDialog', !state.get('showGenerateDialog'));
-    case _action.CHANGE_MAX_WEIGHT:
-      return state.merge({ maxWeight: action.payload, weightError: '' });
-    case _action.CHANGE_MAX_VALUE:
-      return state.merge({ maxValue: action.payload, valueError: '' });
-    case _action.TYPE_ERROR:
-      return state.set(action.payload, 'not an integer');
+    case _action.CHANGE_NUMBER_OF_ITEMS:
+      return state.merge({ numberOfItems: action.payload, error: '' });
+    case _action.NUMBER_ERROR:
+      return state.set('error', 'not an integer');
     default:
       return state;
   }
@@ -60632,7 +60820,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var initialState = _immutable2.default.fromJS({
   items: {},
-  backpack: []
+  backpack: [],
+  maxWeight: 15,
+  maxWeightErrorText: ''
 });
 
 var reducer = function reducer() {
@@ -60641,21 +60831,33 @@ var reducer = function reducer() {
 
   switch (action.type) {
     case _action.GENERATE_RANDOM_ITEMS:
-      return state.set('items', (0, _randomItems2.default)(10));
+      return state.set('items', (0, _randomItems2.default)(action.payload));
     case _action.REMOVE_ALL:
       return state.merge({ items: {}, backpack: [] });
     case _action.EDIT_ITEM:
       {
-        var items = state.get('items');
+        var prevItems = state.get('items');
+        var items = prevItems.size === 0 ? {} : prevItems;
         var index = action.payload.index;
         var newItems = _extends({}, items, _defineProperty({}, index, {
           weight: action.payload.weight,
-          value: action.payload.value
+          value: action.payload.value,
+          valuePerWeight: action.payload.value / action.payload.weight
         }));
         return state.set('items', newItems);
       }
+    case _action.DELETE_ITEM:
+      {
+        var _newItems = Object.assign({}, state.get('items'));
+        delete _newItems[action.payload];
+        return state.set('items', _newItems);
+      }
+    case _action.CHANGE_MAX_WEIGHT:
+      return state.merge({ maxWeight: action.payload, maxWeightErrorText: '' });
+    case _action.MAX_WEIGHT_ERROR:
+      return state.set('maxWeightErrorText', 'not an integer');
     case _action.PACK_BACKPACK:
-      return state.set('backpack', (0, _packItems2.default)(state.get('items'), 15));
+      return state.set('backpack', (0, _packItems2.default)(state.get('items'), state.get('maxWeight')));
     default:
       return state;
   }
