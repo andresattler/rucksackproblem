@@ -1,6 +1,6 @@
 # Rucksackproblem
 
-I've developed this web app as part of the (IT-Talent code competition from May 2017)[https://www.it-talents.de/foerderung/code-competition/code-competition-05-2017]
+I've developed this web app as part of the [IT-Talent code competition from May 2017](https://www.it-talents.de/foerderung/code-competition/code-competition-05-2017)
 
 ## Demo
 [demo](https://andresattler.github.io/rucksackproblem/)
